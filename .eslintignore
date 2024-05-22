@@ -1,0 +1,10 @@
+.eslintrc.js
+next.config.mjs
+tailwind.config.ts
+tsconfig.json
+postcss.config.js
+
+build/
+bin/
+out/
+.next/

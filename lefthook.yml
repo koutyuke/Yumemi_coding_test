@@ -1,0 +1,8 @@
+pre-commit:
+  commands:
+    lint:
+      glob: "*.{js,ts,jsx,tsx}"
+      run: bun run lint:fix --file {staged_files} && git update-index --again
+    fmt:
+      glob: "*.{js,ts,jsx,tsx}"
+      run: bun run fmt:fix {staged_files} && git update-index --again
