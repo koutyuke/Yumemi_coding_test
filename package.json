@@ -7,13 +7,14 @@
     "url": "https://github.com/koutyuke/Yumemi_coding_test"
   },
   "scripts": {
+    "ci": "act --container-architecture linux/amd64",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
-    "fmt": "prettier --check --no-error-on-unmatched-pattern src/**/*.{ts,tsx}",
-    "fmt:fix": "prettier --write --no-error-on-unmatched-pattern src/**/*.{ts,tsx}",
+    "fmt": "prettier --cache --check --no-error-on-unmatched-pattern src/**/*.{ts,tsx}",
+    "fmt:fix": "prettier --cache --write --no-error-on-unmatched-pattern src/**/*.{ts,tsx}",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "sb:dev": "storybook dev -p 6006 --no-open",

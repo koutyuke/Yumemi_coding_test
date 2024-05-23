@@ -24,23 +24,12 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "plugins": [
-    "import",
-    "@typescript-eslint"
-  ],
+  "plugins": ["import", "@typescript-eslint"],
   "rules": {
     "import/order": [
       "error",
       {
-        "groups": [
-          "builtin",
-          "external",
-          "internal",
-          "parent",
-          "sibling",
-          "object",
-          "unknown"
-        ],
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "object", "unknown"],
         "pathGroups": [
           {
             "pattern": "~*/**",
@@ -77,18 +66,14 @@
       }
     ],
     "react/jsx-no-useless-fragment": "error",
-    "react/jsx-props-no-spreading": [
-      "off"
-    ],
+    "react/jsx-props-no-spreading": ["off"],
     "import/no-default-export": "error",
     "import/prefer-default-export": "off",
     "jsx-a11y/label-has-associated-control": "off"
   },
   "overrides": [
     {
-      "files": [
-        "./src/app/**"
-      ],
+      "files": ["./src/app/**"],
       "rules": {
         "import/no-default-export": "off",
         "import/prefer-default-export": "error",
@@ -96,10 +81,7 @@
       }
     },
     {
-      "files": [
-        "./src/app/**/route.ts",
-        "./**/*.story.*"
-      ],
+      "files": ["./src/app/**/route.ts", "./**/*.story.*"],
       "rules": {
         "import/no-default-export": "off",
         "import/prefer-default-export": "off"
