@@ -7,6 +7,7 @@
     "url": "https://github.com/koutyuke/Yumemi_coding_test"
   },
   "scripts": {
+    "ci": "act --container-architecture linux/amd64",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
