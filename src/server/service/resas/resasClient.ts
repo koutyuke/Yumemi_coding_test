@@ -25,12 +25,32 @@ class ResasClient {
     return res;
   }
 
-  async getPrefecturePopulation(prefCode: number) {
-    const response = await fetch(`${this.baseUrl}/population/composition/perYear?cityCode=-&prefCode=${prefCode}`, {
-      headers: {
-        "X-API-KEY": this.apiKey,
+  async getPopulationComposition(
+    prefCode: number,
+    cityCode: `${number}` | "-",
+    optional?: {
+      addArea?: {
+        prefCode: number;
+        cityCode?: `${number}`;
+      }[];
+    },
+  ) {
+    const addArea = optional?.addArea ?? [];
+
+    if (addArea.length > 10) {
+      throw new Error("addArea length must be less than 10.");
+    }
+
+    const flattenAddArea = addArea.map(area => `${area.prefCode}_${area.cityCode ?? ""}`).join(",");
+
+    const response = await fetch(
+      `${this.baseUrl}/population/composition/perYear?cityCode=${cityCode}&prefCode=${prefCode}${flattenAddArea ? `&addArea=${flattenAddArea}` : ""}`,
+      {
+        headers: {
+          "X-API-KEY": this.apiKey,
+        },
       },
-    });
+    );
 
     if (!response.ok) {
       throw new Error("Failed to fetch Resas API prefectural population.");
