@@ -217,6 +217,7 @@ jobs:
     needs:
       - build
       - test
+      - sb_build
     if: ${{ ! failure() }}
     steps:
       - name: check
