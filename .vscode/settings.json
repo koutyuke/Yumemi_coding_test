@@ -170,5 +170,8 @@
     "source.organizeImports.biome": "explicit"
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.quickSuggestions": {
+    "strings": true
+  },
   "workbench.editor.customLabels.enabled": true
 }

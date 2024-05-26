@@ -1,7 +1,33 @@
 import type { StorybookConfig } from "@storybook/nextjs";
 
 const config: StorybookConfig = {
-  stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+  stories: [
+    {
+      directory: "../src/pages",
+      files: "**/*.story.@(js|jsx|mjs|ts|tsx)",
+      titlePrefix: "2 - Pages Layer",
+    },
+    {
+      directory: "../src/widgets",
+      files: "**/*.story.@(js|jsx|mjs|ts|tsx)",
+      titlePrefix: "3 - Widgets Layer",
+    },
+    {
+      directory: "../src/features",
+      files: "**/*.story.@(js|jsx|mjs|ts|tsx)",
+      titlePrefix: "4 - Features Layer",
+    },
+    {
+      directory: "../src/entities",
+      files: "**/*.story.@(js|jsx|mjs|ts|tsx)",
+      titlePrefix: "5 - Entities Layer",
+    },
+    {
+      directory: "../src/shared",
+      files: "**/*.story.@(js|jsx|mjs|ts|tsx)",
+      titlePrefix: "6 - Shared Layer",
+    },
+  ],
   addons: [
     "@storybook/addon-onboarding",
     "@storybook/addon-links",
