@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { resasAppSocialLink } from "@/shared/const/social-link";
 import { GitHubIcon } from "@/shared/ui/icons/github";
-import { Link } from "@/shared/ui/link/link";
+import { Link } from "@/shared/ui/link";
 
 const RepositoryLink: FC = () => {
   const url = resasAppSocialLink.github;

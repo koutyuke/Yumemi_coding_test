@@ -14,7 +14,7 @@ const Header: FC<HeaderProps> = ({ className }) => {
   return (
     <header
       className={twMerge(
-        "flex h-16 w-svw items-center justify-between border-b border-b-sand-7 px-4 shadow-lg backdrop-blur-sm desktop:px-[max(4px_,_calc((100svw_-_1280px)_/_2))]",
+        "z-[100] flex h-16 w-svw items-center justify-between border-b border-b-sand-7 px-4 shadow-lg backdrop-blur-sm desktop:px-[max(4px_,_calc((100svw_-_1280px)_/_2))]",
         className,
       )}
     >

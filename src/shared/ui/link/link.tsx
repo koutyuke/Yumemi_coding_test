@@ -1,32 +1,30 @@
-import NextLink, { LinkProps as NextLinkProps } from "next/link";
-import type { ComponentPropsWithoutRef, ReactNode } from "react";
-import { twMerge } from "tailwind-merge";
+import NextLink from "next/link";
+import { type ComponentPropsWithoutRef, type ElementRef, type ReactNode, forwardRef } from "react";
 
-type LinkProps = NextLinkProps & {
-  children: ReactNode;
-  external?: false;
-  className?: string;
-};
+export type LinkProps =
+  | ComponentPropsWithoutRef<typeof NextLink>
+  | (ComponentPropsWithoutRef<"a"> & {
+      external: true;
+    });
 
-type AnchorProps = ComponentPropsWithoutRef<"a"> & {
-  children: ReactNode;
-  external: true;
-};
+const Link = forwardRef<ElementRef<"a">, LinkProps>(({ children, ...props }, ref): ReactNode => {
+  if ("external" in props) {
+    const { external, href, ...anchorProps } = props;
 
-const Link = ({ children, className, ...props }: LinkProps | AnchorProps) =>
-  props.external ? (
-    <a
-      {...props}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={twMerge("underline underline-offset-2", className)}
-    >
-      {children}
-    </a>
-  ) : (
-    <NextLink {...props} className={twMerge("underline underline-offset-2", className)}>
+    return (
+      <a ref={ref} href={href?.toString()} target="_blank" rel="noopener noreferrer" {...anchorProps}>
+        {children}
+      </a>
+    );
+  }
+
+  return (
+    <NextLink ref={ref} {...props}>
       {children}
     </NextLink>
   );
+});
+
+Link.displayName = "Link";
 
 export { Link };
