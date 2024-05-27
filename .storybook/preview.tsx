@@ -3,6 +3,7 @@ import type { Preview } from "@storybook/react";
 import "../src/app/globals.css";
 import React from "react";
 import { ThemeProvider } from "../src/features/theme/provider";
+import { Provider as JotaiProvider } from "jotai";
 
 const preview: Preview = {
   parameters: {
@@ -19,9 +20,11 @@ const preview: Preview = {
   },
   decorators: [
     Story => (
-      <ThemeProvider>
-        <Story />
-      </ThemeProvider>
+      <JotaiProvider>
+        <ThemeProvider>
+          <Story />
+        </ThemeProvider>
+      </JotaiProvider>
     ),
   ],
 };

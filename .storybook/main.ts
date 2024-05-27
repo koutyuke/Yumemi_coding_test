@@ -3,7 +3,7 @@ import type { StorybookConfig } from "@storybook/nextjs";
 const config: StorybookConfig = {
   stories: [
     {
-      directory: "../src/pages",
+      directory: "../src/_pages",
       files: "**/*.story.@(js|jsx|mjs|ts|tsx)",
       titlePrefix: "2 - Pages Layer",
     },
