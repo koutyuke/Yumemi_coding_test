@@ -1,9 +1,7 @@
+import { RootPage } from "@/_pages/root/ui";
+
 const Home = () => {
-  return (
-    <main className="flex min-h-svh flex-col items-center justify-between p-24">
-      <div>hello world</div>
-    </main>
-  );
+  return <RootPage />;
 };
 
 export default Home;
