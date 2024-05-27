@@ -10,5 +10,5 @@ export const creatorSocialLink = {
 
 export const resasApiUrl = {
   home: "https://opendata.resas-portal.go.jp/",
-  api: "https://opendata.resas-portal.go.jp/docs/api/v1",
+  api: "https://opendata.resas-portal.go.jp/docs/api/v1/index.html",
 };
